@@ -46,53 +46,53 @@ concept:(break3000) \pau=3000\
 u:(e:onStart)
     ^nextProposal
 
-proposal: ^run(animations/brass-band)
+proposal: ^run(peppers-three-musketeers-story/animations/brass-band)
     ~break2000
     ^nextProposal
 
-proposal: ^start(animations/louis)
+proposal: ^start(peppers-three-musketeers-story/animations/louis)
     ~louis
-    ^wait(animations/louis)
+    ^wait(peppers-three-musketeers-story/animations/louis)
     ^nextProposal
 
-proposal: ^run(animations/cardinal)
+proposal: ^run(peppers-three-musketeers-story/animations/cardinal)
     ~break3000
     ^nextProposal
 
-proposal: ^start(animations/bravest)
+proposal: ^start(peppers-three-musketeers-story/animations/bravest)
     ~bravest
-    ^wait(animations/bravest)
+    ^wait(peppers-three-musketeers-story/animations/bravest)
     ^nextProposal
 
-proposal: ^run(animations/horse-riding)
+proposal: ^run(peppers-three-musketeers-story/animations/horse-riding)
     ~break2000
     ^nextProposal
 
-proposal: ^start(animations/fierce-duel)
+proposal: ^start(peppers-three-musketeers-story/animations/fierce-duel)
     ~fierce
-    ^wait(animations/fierce-duel)
+    ^wait(peppers-three-musketeers-story/animations/fierce-duel)
     ~break1000
     ^nextProposal
 
-proposal: ^start(animations/defeated)
+proposal: ^start(peppers-three-musketeers-story/animations/defeated)
     ~defeated
-    ^wait(animations/defeated)
+    ^wait(peppers-three-musketeers-story/animations/defeated)
     ^nextProposal
 
-proposal: ^start(animations/acclaimed)
+proposal: ^start(peppers-three-musketeers-story/animations/acclaimed)
     ~acclaimed
-    ^wait(animations/acclaimed)
+    ^wait(peppers-three-musketeers-story/animations/acclaimed)
     ~break1000
     ^nextProposal
 
-proposal: ^start(animations/adventure)
+proposal: ^start(peppers-three-musketeers-story/animations/adventure)
     ~adventures
     ~break1000
     ~beloved
-    ^wait(animations/adventure)
+    ^wait(peppers-three-musketeers-story/animations/adventure)
     ^nextProposal
 
-proposal: ^run(animations/horse-riding)
+proposal: ^run(peppers-three-musketeers-story/animations/horse-riding)
     ~break2000
     ^nextProposal
 

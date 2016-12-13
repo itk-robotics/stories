@@ -35,7 +35,7 @@
         except Exception as exc:
             self.log("Error getting required modules: %s" % str(exc))
         # Change language to English during the application
-        #self._changeLanguage("English")
+        self._changeLanguage("English")
 
     def onUnload(self):
         try:
@@ -77,7 +77,6 @@
         self.tablet.showImage(self._getAbsoluteUrl("musketeers_logo.png"))
 
     def onInput_onStart(self):
-        #return
         try:
             self.amoves.setBackgroundStrategy("none")
         except Exception as exc:
@@ -90,8 +89,8 @@
             self.animatedSpeech.setBodyLanguageModeFromStr("disabled")
         except Exception as exc:
             self.log("Unable to disable body language: %s" % str(exc))
-        #self._setup_tablet()
-        #self._preload_images()
+        self._setup_tablet()
+        self._preload_images()
         self.postureProxy.setMaxTryNumber(3)
         result = self.postureProxy.goToPosture("Stand", 0.8)
         if(result):

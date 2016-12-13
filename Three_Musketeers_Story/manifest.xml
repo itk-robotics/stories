@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<package version="0.0.1" uuid="peppers-three-musketeers-story">
+<package uuid="peppers-three-musketeers-story" version="0.0.1">
  <names>
   <name lang="en_US">Three_Musketeers_Story</name>
  </names>
@@ -30,11 +30,13 @@
     <sentence lang="en_US">three musketeers</sentence>
     <sentence lang="en_US">three musketeers story</sentence>
     <sentence lang="en_US">pepper's three musketeers story</sentence>
+    <sentence lang="en_US">tell me a story</sentence>
    </triggerSentences>
    <loadingResponses>
     <sentence lang="en_US">I hope you like this story!</sentence>
     <sentence lang="en_US">It's a story based on Alexandre Dumas' novel.</sentence>
    </loadingResponses>
+   <autonomous/>
    <permissions>
     <canStandUp/>
     <canRunOnPod/>
