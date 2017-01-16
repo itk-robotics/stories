@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="0.0.0" uuid="vi2017-db5572">
+ <names>
+  <name lang="en_US">Velfærdens innovationsdag 2017</name>
+ </names>
+ <supportedLanguages>
+  <language>en_US</language>
+ </supportedLanguages>
+ <descriptionLanguages>
+  <language>en_US</language>
+ </descriptionLanguages>
+ <contents>
+  <behaviorContent path="attention1">
+   <nature>solitary</nature>
+   <descriptions>
+    <description lang="en_US">Seek attention when nobody is interacting with the robot
+Launch trigger condition:
+('Launchpad/DistanceOfTrackedHuman' > 2)~10</description>
+   </descriptions>
+   <autonomous>
+    <condition purpose="launchTrigger"><![CDATA[('Launchpad/DistanceOfTrackedHuman' > 1)~3]]></condition>
+   </autonomous>
+   <permissions>
+    <canRunOnPod/>
+    <canStandUp/>
+   </permissions>
+  </behaviorContent>
+  <behaviorContent path="Interaction">
+   <nature>interactive</nature>
+   <descriptions>
+    <description lang="en_US">Launch trigger condition:
+('Launchpad/ZoneOfTrackedHuman' == 1) &amp;&amp; ('UserSession/FocusedUser' >= 0)</description>
+   </descriptions>
+   <autonomous>
+    <condition purpose="launchTrigger"><![CDATA[('Launchpad/ZoneOfTrackedHuman' == 1) && ('UserSession/FocusedUser' >= 0)]]></condition>
+   </autonomous>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="loiter1">
+   <nature>solitary</nature>
+   <descriptions>
+    <description lang="en_US">Launch trigger condition:
+
+When no human has been tracked for 60 seconds AND it has been 60 seconds since the previous activity. (excluding loiter). Alternatively it has been 120 seconds since loiter ran. Otherwise loiter will not run after itself.
+
+('ALBasicAwareness/HumanTracked' = -1)~60
+&amp;&amp; (('Launchpad/PreviousActivity' != "vi2017-db5572/loiter1")~60 || ('Launchpad/PreviousActivity' == "vi2017-db5572/loiter1")~120)
+
+</description>
+   </descriptions>
+   <autonomous>
+    <condition purpose="launchTrigger"><![CDATA[('ALBasicAwareness/HumanTracked' = -1)~60
+&& (('Launchpad/PreviousActivity' != "vi2017-db5572/loiter1")~60 || ('Launchpad/PreviousActivity' == "vi2017-db5572/loiter1")~120)]]></condition>
+   </autonomous>
+   <permissions/>
+  </behaviorContent>
+ </contents>
+</package>

@@ -1,0 +1,20 @@
+topic: ~picture()
+language: enu
+
+include: lexicon_enu.top
+
+concept:(leave) ^rand["Have a nice day!" "See you around" "Come back soon"] #"Don't be a stranger"
+
+# Catching inputs and triggering outputs
+u:(e:onStart) \rspd=90\  Would you like to take a picture before you go?
+    u1:(~yes) ^goto(final)
+    u1:(~no) ~leave $onStopped=1 
+    u1:(e:Dialog/NotSpeaking5) ^goto(final)
+
+proposal: %final
+    \rspd=90\ 
+     Okay. I will strike a pose for 5 seconds. ^mode(disabled) ^runTag(far) \pau=3000\ I will count down from 5. \pau=3000\ Looking good! \pau=2000\ This is my good side \pau=3000\ Did you get it? 
+    \rspd=100\
+    u1:(~yes) Great! ~leave
+    u1:(~no) ^mode(disabled) ^runTag(far) I will move in 5 seconds. \pau=5000\ ~leave $memPostureStand=1 $onStopped=1  
+    u1:(e:Dialog/NotSpeaking5)  $memPostureStand=1 \pau=1000\ ~leave  $onStopped=1 

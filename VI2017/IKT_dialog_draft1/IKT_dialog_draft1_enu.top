@@ -1,0 +1,70 @@
+topic: ~IKT_dialog_draft1()
+language: enu
+
+include: lexicon_enu.top
+# Defining extra concepts out of words or group of words
+concept:(hello) ^rand[hello hi hey greetings]
+concept:(welcome) ^rand["nice to meet you" "thanks for coming by" "good you are here"]
+concept:(leave) ^rand["Have a nice day!" "See you around" "Come back soon" "Don't be a stranger"]
+
+
+ Catching inputs and triggering outputs
+u:(e:onStart) \rspd=90\ ~hello \pau=600\ my name is Norma. I am from Denmark. ^goto(branch1) #Have you heard of denmark?
+#    u1:(~yes) $memHappyAnimation=1 \pau=1000\ \style=joyful\ awesome \style=neutral\  \pau=3000\    ^goto(branch1) 
+#    u1:(~no) oh, okay \rspd=2000\ ^goto(branch1)
+#    u1:(e:Dialog/NotSpeaking5) well ^goto(branch1)
+    
+proposal: %branch1
+    $memRandDecimal=0.5 \pau=100\ #50% to be true
+    u1:(e:memEventRandomDecimal) ["$memSlideshowTag="pavilion"  $onStopped=1 $memRandomBool==1" "^goto(branch2)"]                        
+    
+proposal: %branch2
+    $memRandDecimal=0.5 \pau=100\ #50% to be true
+    u1:(e:memEventRandomDecimal) ["$memSlideshowTag="environment" $onStopped=1 $memRandomBool==1" "$memSlideshowTag="smartcity" $onStopped=1"]
+    
+    
+#ANDKRO START DEBUG TODO delete  
+#u:(e:onStart)
+#    $memRandDecimal=0.5 \pau=100\ #50% to be true
+#    u1:(e:memEventRandomDecimal) ["$memSlideshowTag='pavilion'  $onStopped=1 $memRandomBool==1" "^goto(branch2)"]                        
+    
+#proposal: %branch2
+#    $memRandDecimal=0.5 \pau=100\ #50% to be true
+#    u1:(e:memEventRandomDecimal) ["$memSlideshowTag='environment' $onStopped=1 $memRandomBool==1" "$memSlideshowTag='smartcity' $onStopped=1"] 
+#ANDKRO STOP DEBUG TODO delete    
+    
+#proposal:%proposal_2 #partners
+#    \rspd=90\
+#    Would you like to hear about us?
+#    u1:(~yes) $memeappyAoimation=1 \pau=1000\ \style=joyful\ awesome \style=neutral\  \pau=3000\ ^gotoRandom(partners)
+#    u1:(~no) ~leave\rspd=100\ $memPostureStand=1 $memStopBehavior=1
+    
+#proposal:%talk
+#    \rspd=90\
+#   Would you like to hear about the Danish pavilion?
+#    u1:(~yes) ^goto(more1)
+#    u1:(~no) ^goto(nothanks)
+    
+#proposal: %more1
+#    \rspd=90\
+#    This is the Danish pavilion at the annual Smart City Expoin Barcelona. In Denmark we have many leading experts within Smart Cities. Would you like to know more?
+#    u1:(~yes) $memSlideshowTag="DK"
+#    u1:(~no) ^goto(nothanks)
+
+
+   
+#proposal: %more3  #final
+#    \rspd=90\
+#    Our focus is on showing solutions that we have now, and also investigate the solutions that are yet needed. Please enter the pavilion and see the many exciting projects. \rspd=100\ $memPostureStand=1 $memStopBehavior=1        
+            
+      
+
+proposal: %environment
+    \rspd=90\
+    We see Smart Cities as the place where better, more environment friendly services for citizens are provided by the integration of new technologies. We do this in combination with a deep understanding of human behavior and needs.    
+    Would you like to know more? a new dialog topic should be launched after the slideshow.
+    $memSlideshowTag="environment"
+proposal: %smartcity
+        \rspd=90\
+    The aim of the Danish pavilion is to show the world what Denmark has established within the area of developing smart cities in Denmark.
+        $memSlideshowTag="smartcity"

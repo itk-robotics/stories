@@ -1,0 +1,117 @@
+{  
+  "01_Pavillon.jpg":[  
+    "\\rspd=90\\This is the Danish pavilion, at the annual Smart City Expo & World Congress in Barselona",
+    "pavilion",
+    1
+  ],
+  "04_smart_city_tech.jpg":[  
+    "\\rspd=90\\Drones are the little helpers of the smart city. \\pau=600\\ They go where we cannot",
+    "smartcity",
+    4
+  ],
+  "03_smart_city_tech.jpg":[  
+    "\\rspd=90\\ In Copenhagen and Aarhus, we set up test beds for a continuous exploration, of smart city solutions",
+    "smartcity",
+    3
+  ],
+  "08_leap_craft.jpg":[  
+    "\\rspd=90\\and building new services using the smart city data",
+    "pavilion",
+    7
+  ],
+  "02_sustainability.jpg":[  
+    "\\rspd=90\\ We have sensors monitoring the outdoor air quality, to gather information about the environmental conditions of the city",
+    "environment",
+    2
+  ],
+  "01_smart_city_tech.jpg":[  
+    "\\rspd=90\\ The aim of the Danish pavilion, is to show the world what we have established, within the area of developing smart cities in Denmark.",
+    "smartcity",
+    1
+  ],
+  "01_sustainability.jpg":[  
+    "We see Smart Cities as the place where better, more environment friendly services for citizens, are provided by the integration of new technologies.",
+    "environment",
+    1
+  ],
+  "05_sustainability.jpg":[  
+    "\\rspd=90\\ We test sensors that communicate when waste bins are full. \\pau=600\\ A smart way of keeping the city clean",
+    "environment",
+    5
+  ],
+  "04_sustainability.jpg":[  
+    "\\rspd=90\\ We test sensors, collecting data about the soil, moisture, light and temperature. \\pau=600\\ Our cities have green fingers",
+    "environment",
+    4
+  ],
+  "05_smart_city_tech.jpg":[  
+    "and the possibilities of what they can do, are endless.",
+    "smartcity",
+    5
+  ],
+  "07_Alexandra_pixl_park_kimwendt.jpg":[  
+    "\\rspd=90\\new ways of using the city with interactive pavements and light",
+    "pavilion",
+    5
+  ],
+  "06_sustainable-transportation.jpg":[  
+    "\\rspd=90\\We support sustainable transportation, by using data, to provide a faster commute, or one with less airpolution",
+    "environment",
+    6
+  ],
+  "04_pavilion.jpg":[  
+    "\\rspd=90\\ And even humanoid robots are finding their way into the city as a workspace. Smart\\pau=100\\Aarhus just hired it’s firste humanoid robot. That is me \\pau=400\\ Norma!",
+    "pavilion",
+    8
+  ],
+  "05_CPH_solutionslab.jpg":[  
+    "\\rspd=90\\The Copenhagen Solution lab \\pau=200\\ is an incubator for smart city initiatives. They partner both local, and international companies, with the city administration. \\pau=500\\ The vision is to improve the good everyday life.",
+    "pavilion",
+    3
+  ],
+  "07_smart_city_tech.jpg":[  
+    "Humanoid robots are helpful too. \\pau=600\\ And we are good companion",
+    "smartcity",
+    6
+  ],
+  "03_intelligent-street-lights_02.jpg":[  
+    "\\rspd=90\\Learn more about future-proof transistions to improved technologies like L E D lights",
+    "pavilion",
+    4
+  ],
+  "02_smart_city_tech.jpg":[  
+    "\\rspd=90\\Traffic sensors provide us with data that provides a better commute for citizens",
+    "smartcity",
+    2
+  ],
+  "06_hitachi_CPH.jpg":[  
+    "\\rspd=90\\exchanging data between citizens, companies and government",
+    "pavilion",
+    6
+  ],
+  "02_climate-adaptation.jpg":[  
+    "\\rspd=90\\Danish cities are growing into Smart cities before our very eyes",
+    "pavilion",
+    2
+  ],
+  "03_sustainability.jpg":[  
+    "\\rspd=90\\We believe that waste, can no longer be waste. \\pau=600\\ We have no choice but to make it a resource",
+    "environment",
+    3
+  ],
+  "partnerslide_E.jpg":[  
+    "\\rspd=90\\You can always visit us inside the pavilion",
+    "environment",
+    7
+  ],
+  "partnerslide_S.jpg":[  
+    "\\rspd=90\\Of course we couldn't do this without our partners.",
+    "smartcity",
+    8
+  ],
+  "partnerslide_P.jpg":[  
+    "\\rspd=90\\In Denmark we have many leading experts within Smart Cities. \\pau=600\\ You can always visit us inside the pavillion.",
+    "pavilion",
+    9
+  ]
+}

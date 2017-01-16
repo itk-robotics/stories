@@ -1,0 +1,16 @@
+topic: ~attention_dialog()
+language: enu
+
+# Defining extra concepts out of words or group of words
+concept:(hello) ^rand[hello hi hey greetings]
+
+concept:(attention) ^rand["come over" "come here" "I wanna show you something" "Don't be shy"]
+
+
+
+# Catching inputs and triggering outputs
+u:(e:onStart) ^mode(disabled) \style=joyful\ \rspd=90\ \vct=95\ ~hello \pau=500\ ~attention 
+       \style=neutral\ \rspd=100\ \vct=100\ $onStopped=1
+
+# Replying to speech
+#u:(~hello) ~hello
