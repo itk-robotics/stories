@@ -24,8 +24,8 @@
             <BehaviorLayer name="behavior_layer1">
                 <BehaviorKeyframe name="keyframe1" index="1">
                     <Diagram scale="70.7107">
-                        <Box name="IKT_dialog_draft1" id="1" localization="8" tooltip="First draft per email" x="276" y="9">
-                            <dialogFile>../IKT_dialog_draft1/IKT_dialog_draft1.dlg</dialogFile>
+                        <Box name="slideshow" id="1" localization="8" tooltip="First draft per email" x="276" y="9">
+                            <dialogFile>../slideshow/slideshow.dlg</dialogFile>
                             <bitmap>media/images/box/box-dialog.png</bitmap>
                             <script language="4">
                                 <content>
@@ -37,7 +37,7 @@
                             <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" />
                             <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" />
                         </Box>
-                        <Box name="Slideshow" id="4" localization="8" tooltip="Connect to tablet, load metadata (ImageColl.json)" x="246" y="128">
+                        <Box name="Slideshow" id="4" localization="8" tooltip="Connect to tablet, load metadata (ImageColl.json)" x="228" y="117">
                             <bitmap>media/images/box/box-python-script.png</bitmap>
                             <script language="4">
                                 <content>
@@ -97,7 +97,7 @@
                 pass
 
         if not self.fileList: #if array is empty
-            self.outputError("_getJsonDict: fileList is empty")
+            self.outputError("_getJsonDict: fileList is empty; tag: " + str(tag))
             self.onInput_onStop()
 
         #self.fileList.sort(key = lambda x: x[1])
@@ -106,7 +106,7 @@
         for a, b in tempList:
             self.fileList.append(a)
 
-        self.logger.info(self.fileList)
+        self.logger.debug('_getJsonDict: ' + str(self.fileList))
 
     def onInput_onStart(self,imageTag):
         self.tts = self.session().service("ALTextToSpeech")
@@ -116,6 +116,7 @@
 
         self._getJsonDict(imageTag)
         self.logger.debug("JSON: \n" + str(self.imageDict))
+        self.logger.debug("fileList: \n" + str(self.fileList))
         self.i = 0
         from time import sleep
         self.running = True
@@ -127,6 +128,7 @@
             self.onStopped()
 
         while self.running == True :
+            preloadUrl = ''
             self.logger.debug("Testing fileList length! " + str(self.fileList))
             if len(self.fileList) > (self.i):
                 url = self.fileList[self.i]
@@ -462,7 +464,7 @@ class MyClass(GeneratedClass):
                             </Timeline>
                             <Resource name="Speech" type="Lock" timeout="0" />
                         </Box>
-                        <Box name="happy animation" id="7" localization="8" tooltip="" x="88" y="279">
+                        <Box name="happy animation" id="7" localization="8" tooltip="" x="428" y="416">
                             <bitmap>media/images/box/box-python-script.png</bitmap>
                             <script language="4">
                                 <content>
@@ -633,7 +635,7 @@ class MyClass(GeneratedClass):
                             </Parameter>
                             <Parameter name="Value to compare" inherits_from_parent="0" content_type="3" value="2" default_value="0" custom_choice="0" tooltip="This is the value which is compared to the input value." id="6" />
                         </Box>
-                        <Box name="Wait" id="9" localization="8" tooltip="Wait a moment before sending a signal on the output. &#x0A;Can be stopped anytime. &#x0A;Stimulating the input again before output is activated restarts the waiting period.&#x0A;" x="501" y="399">
+                        <Box name="Wait" id="9" localization="8" tooltip="Wait a moment before sending a signal on the output. &#x0A;Can be stopped anytime. &#x0A;Stimulating the input again before output is activated restarts the waiting period.&#x0A;" x="502" y="287">
                             <bitmap>media/images/box/wait.png</bitmap>
                             <script language="4">
                                 <content>
@@ -673,7 +675,7 @@ class MyClass(GeneratedClass):
                             <Parameter name="Timeout (s)" inherits_from_parent="0" content_type="2" value="1" default_value="1" min="0" max="5000" tooltip="Duration the box waits before stimulating the output." id="5" />
                             <Parameter name="Trigger timerOutput if cancelled" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="If the box is currently waiting and cancelled, output will be stimulated." id="6" />
                         </Box>
-                        <Box name="random" id="11" localization="8" tooltip="Given a parameter between 0.0-1.0. If the random number is smaller than the parameter then raises event True." x="86" y="378">
+                        <Box name="random" id="11" localization="8" tooltip="Given a parameter between 0.0-1.0. If the random number is smaller than the parameter then raises event True." x="196" y="368">
                             <bitmap>media/images/box/box-python-script.png</bitmap>
                             <script language="4">
                                 <content>
@@ -719,7 +721,7 @@ class MyClass(GeneratedClass):
                             <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" />
                             <Output name="onStopped" type="0" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" />
                         </Box>
-                        <Box name="facelog" id="12" localization="8" tooltip="" x="158" y="20">
+                        <Box name="facelog" id="12" localization="8" tooltip="" x="154" y="56">
                             <bitmap>media/images/box/interaction/reco_face.png</bitmap>
                             <script language="4">
                                 <content>
@@ -1149,7 +1151,7 @@ class MyClass(GeneratedClass):
                                 <Choice value="Debug" />
                             </Parameter>
                         </Box>
-                        <Box name="post_slideshow" id="13" localization="8" tooltip="" x="505" y="145">
+                        <Box name="post_slideshow" id="13" localization="8" tooltip="" x="463" y="116">
                             <dialogFile>../post_slideshow/post_slideshow.dlg</dialogFile>
                             <bitmap>media/images/box/box-dialog.png</bitmap>
                             <script language="4">
@@ -1798,7 +1800,7 @@ class MyClass(GeneratedClass):
                             <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" />
                             <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" />
                         </Box>
-                        <Box name="showStairs" id="3" localization="8" tooltip="" x="270" y="371">
+                        <Box name="showStairs" id="3" localization="8" tooltip="" x="591" y="511">
                             <bitmap>media/images/box/box-timeLine.png</bitmap>
                             <script language="4">
                                 <content>
@@ -1879,7 +1881,7 @@ class MyClass(GeneratedClass):
                                 </ActuatorList>
                             </Timeline>
                         </Box>
-                        <Box name="Log (1)" id="6" localization="8" tooltip="Prompt the message in the debug window. You can set a prefix and a priority&#x0A;for the message in the parameters." x="589" y="43">
+                        <Box name="Log (1)" id="6" localization="8" tooltip="Prompt the message in the debug window. You can set a prefix and a priority&#x0A;for the message in the parameters." x="589" y="8">
                             <bitmap>media/images/box/print.png</bitmap>
                             <script language="4">
                                 <content>
@@ -2377,7 +2379,7 @@ class MyClass(GeneratedClass):
                             <Resource name="Standing" type="Lock" timeout="1" />
                             <Resource name="All motors" type="Lock" timeout="1" />
                         </Box>
-                        <Box name="failed exiting" id="20" localization="8" tooltip="Prompt the message in the debug window. You can set a prefix and a priority&#x0A;for the message in the parameters." x="369" y="399">
+                        <Box name="failed exiting" id="20" localization="8" tooltip="Prompt the message in the debug window. You can set a prefix and a priority&#x0A;for the message in the parameters." x="445" y="708">
                             <bitmap>media/images/box/print.png</bitmap>
                             <script language="4">
                                 <content>

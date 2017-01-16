@@ -8,9 +8,9 @@
     </BehaviorDescriptions>
     <Dialogs>
         <Dialog name="attention_dialog" src="attention_dialog/attention_dialog.dlg" />
-        <Dialog name="IKT_dialog_draft1" src="IKT_dialog_draft1/IKT_dialog_draft1.dlg" />
         <Dialog name="post_slideshow" src="post_slideshow/post_slideshow.dlg" />
         <Dialog name="picture" src="picture/picture.dlg" />
+        <Dialog name="IKT_dialog_draft1" src="slideshow/slideshow.dlg" />
     </Dialogs>
     <Resources>
         <File name="icon" src="icon.png" />
@@ -39,11 +39,11 @@
         <File name="07_smart_city_tech" src="html/07_smart_city_tech.jpg" />
         <File name="08_leap_craft" src="html/08_leap_craft.jpg" />
         <File name="README" src="README.md" />
+        <File name=".dir-locals" src=".dir-locals.el" />
     </Resources>
     <Topics>
         <Topic name="attention_dialog_enu" src="attention_dialog/attention_dialog_enu.top" topicName="attention_dialog" language="en_US" />
-        <Topic name="IKT_dialog_draft1_enu" src="IKT_dialog_draft1/IKT_dialog_draft1_enu.top" topicName="IKT_dialog_draft1" language="en_US" />
-        <Topic name="OLD IKT_dialog_draft1_enu - Kopi" src="IKT_dialog_draft1/OLD IKT_dialog_draft1_enu - Kopi.top" topicName="" language="" />
+        <Topic name="slideshow_enu" src="slideshow/slideshow_enu.top" topicName="slideshow" language="en_US" />
         <Topic name="post_slideshow_enu" src="post_slideshow/post_slideshow_enu.top" topicName="post_slideshow" language="en_US" />
         <Topic name="picture_enu" src="picture/picture_enu.top" topicName="picture" language="en_US" />
     </Topics>
