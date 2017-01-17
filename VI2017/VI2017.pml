@@ -85,6 +85,7 @@
         <File name="setup" src="lib/PyYAML-3.12/setup.py" />
         <File name="slideshow" src="slideshow.json" />
         <File name="slideshow" src="slideshow.yaml" />
+        <File name="vi2017" src="vi2017.yml" />
     </Resources>
     <Topics>
         <Topic name="attention_dialog_enu" src="attention_dialog/attention_dialog_enu.top" topicName="attention_dialog" language="en_US" />

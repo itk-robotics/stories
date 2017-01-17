@@ -167,7 +167,7 @@ class MyClass(GeneratedClass):
                             <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" />
                             <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" />
                             <Output name="outputError" type="0" type_size="1" nature="2" inner="0" tooltip="" id="5" />
-                            <Parameter name="slideShowPath" inherits_from_parent="0" content_type="4" value="/../slideshow.yaml" default_value="/../slideshow.yaml" tooltip="" id="6" />
+                            <Parameter name="slideShowPath" inherits_from_parent="0" content_type="4" value="/../vi2017.yml" default_value="/../slideshow.yaml" tooltip="" id="6" />
                         </Box>
                         <Box name="Log" id="2" localization="8" tooltip="Prompt the message in the debug window. You can set a prefix and a priority&#x0A;for the message in the parameters." x="332" y="245">
                             <bitmap>media/images/box/print.png</bitmap>
