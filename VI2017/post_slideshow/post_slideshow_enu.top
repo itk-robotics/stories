@@ -11,10 +11,9 @@ u:(e:onStart) \rspd=90\ Would you like to know more?
     u1:(~no) ^goto(nothanks)
     u1:(e:Dialog/NotSpeaking5) well ^goto(final)
 
-
 proposal: %nothanks
     \rspd=90\
-    ^mode(disabled) $memPavilionAnimation=1 Ok. You can always visit us inside the pavillion.  \pau= 3000\
+    ^mode(disabled) $memPavilionAnimation=1 Ok. You can always visit us inside the pavillion. \pau=3000\
     ^mode(contextual) Thank you for listening. \rspd=100\
     $memPostureStand=1 $onStopped=1
 
