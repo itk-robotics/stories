@@ -47,7 +47,5 @@
         <Topic name="post_slideshow_enu" src="post_slideshow/post_slideshow_enu.top" topicName="post_slideshow" language="en_US" />
         <Topic name="picture_enu" src="picture/picture_enu.top" topicName="picture" language="en_US" />
     </Topics>
-    <IgnoredPaths>
-        <Path src=".metadata" />
-    </IgnoredPaths>
+    <IgnoredPaths />
 </Package>
