@@ -123,7 +123,7 @@ class MyClass(GeneratedClass):
                                                 <bitmap>media/images/box/box-python-script.png</bitmap>
                                                 <script language="4">
                                                     <content>
-                                                        <![CDATA[§§§class MyClass(GeneratedClass):
+                                                        <![CDATA[class MyClass(GeneratedClass):
     def __init__(self):
         GeneratedClass.__init__(self)
 
