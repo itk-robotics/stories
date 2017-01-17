@@ -11,7 +11,7 @@ This stuff consists of 3 parts:
 
 We currently handle 3 different subjects.
 
-To change the subjects, edit `slideshow/slideshow_enu.top` and `images.json`.
+To change the subjects, edit `slideshow/slideshow_enu.top` and `images.json`. Also edit `post_slideshow/post_slideshow_enu.top` to reflect the actual subjects.
 
 ## Images and words
 
@@ -31,7 +31,7 @@ Edit `images.json` to change images and words:
 
 Where
 * `«image filename»` is an image file in the `html` folder.
-* `«text to speek»` is the text to say (see http://doc.aldebaran.com/2-1/naoqi/audio/dialog/dialog-syntax_full.html)
+* `«text to speak»` is the text to say (see http://doc.aldebaran.com/2-1/naoqi/audio/dialog/dialog-syntax_full.html)
 * `«subject»` is the subject
 * `«number»` is the order within the subject
 
