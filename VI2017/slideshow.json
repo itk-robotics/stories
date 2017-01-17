@@ -1,0 +1,26 @@
+{
+	"pavilion": [
+		{
+			"image": "01_Pavillon.jpg",
+			"text": "\\rspd=90\\This is the Danish pavilion, at the annual Smart City Expo & World Congress in Barselona",
+			"wait_before": 1,
+			"wait_after": 10
+		},
+		{
+			"image": "04_pavilion.jpg",
+			"text": "\\rspd=90\\2. This is the other Danish pavilion, at the annual Smart City Expo & World Congress in Barcelona"
+		}
+	],
+	"environment": [
+		{
+			"image": "02_sustainability.jpg",
+			"text": "\\rspd=90\\ We have sensors monitoring the outdoor air quality, to gather information about the environmental conditions of the city"
+		}
+	],
+	"smartcity": [
+		{
+			"image": "01_smart_city_tech.jpg",
+			"text": "\\rspd=90\\ The aim of the Danish pavilion, is to show the world what we have established, within the area of developing smart cities in Denmark."
+		}
+	]
+}

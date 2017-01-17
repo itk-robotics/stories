@@ -11,7 +11,7 @@ This stuff consists of 3 parts:
 
 We currently handle 3 different subjects.
 
-To change the subjects, edit `slideshow/slideshow_enu.top` and `images.json`. Also edit `post_slideshow/post_slideshow_enu.top` to reflect the actual subjects.
+To change the subjects, edit `slideshow/slideshow_enu.top` and `slideshow.yaml`. Also edit `post_slideshow/post_slideshow_enu.top` to reflect the actual subjects.
 
 ## Images and words
 

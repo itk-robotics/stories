@@ -41,27 +41,34 @@
                             <bitmap>media/images/box/box-python-script.png</bitmap>
                             <script language="4">
                                 <content>
-                                    <![CDATA[class MyClass(GeneratedClass):
+                                    <![CDATA[import sys
+import re
+import json
+
+class MyClass(GeneratedClass):
     def __init__(self):
         GeneratedClass.__init__(self)
         pass
 
-
-
     def onLoad(self):
         self.memory = self.session().service("ALMemory")
         self.framemanager = self.session().service("ALFrameManager")
-        self.jsonFile = "images.json"
-        self.imageDict = {}
-
-
+        slideshowPath = "slideshow.yaml"
+        #slideshowPath = "slideshow.json"
+        self.slideshow = {}
+        with open (self.framemanager.getBehaviorPath(self.behaviorId) + "/../" + slideshowPath) as input:
+            if re.search('\.ya?ml$', slideshowPath):
+                sys.path.append(self.framemanager.getBehaviorPath(self.behaviorId) + '/../lib/PyYAML-3.12/lib')
+                import yaml
+                self.slideshow = yaml.load(input)
+            elif re.search('\.json$', slideshowPath):
+                self.slideshow = json.load(input)
+        self.logger.debug("slideshow: " + str(self.slideshow))
 
     def onUnload(self):
         #uncommented because they might yet cause error when exiting, when .say is still running...
         self.memory = None
-        self.fileList = None
-        self.imageDict = None
-
+        self.slideshow = None
 
     def _getTabletService(self):
         tabletService = None
@@ -71,110 +78,61 @@
             self.logger.error(e)
         return tabletService
 
-
-
     def _getAbsoluteUrl(self, partial_url):
         import os
         subPath = os.path.join(self.packageUid(), os.path.normpath(partial_url).lstrip("\\/"))
-        # We create TabletService here in order to avoid
-        # problems with connections and disconnections of the tablet during the life of the application
         return "http://%s/apps/%s" %(self._getTabletService().robotIp(), subPath.replace(os.path.sep, "/"))
-
-
-
-    def _getJsonDict(self,tag):
-        import json
-        with open (self.framemanager.getBehaviorPath(self.behaviorId) + "/../" + self.jsonFile) as input:
-            self.imageDict = json.load(input)
-
-        for key, value in self.imageDict.iteritems():
-
-            if value[1] == tag:
-                self.fileList.append([key,value[2]]) #new list with filename and sequence number
-                #self.logger.info("tag was equal to value1: " + tag + " == " + str(value[1]))
-            else:
-                #self.logger.info("tag was not equal to value1: " + tag + " =|= " + str(value[1]))
-                pass
-
-        if not self.fileList: #if array is empty
-            self.outputError("_getJsonDict: fileList is empty; tag: " + str(tag))
-            self.onInput_onStop()
-
-        #self.fileList.sort(key = lambda x: x[1])
-        tempList = sorted(self.fileList, key = lambda x: x[1])
-        self.fileList = []
-        for a, b in tempList:
-            self.fileList.append(a)
-
-        self.logger.debug('_getJsonDict: ' + str(self.fileList))
 
     def onInput_onStart(self,imageTag):
         self.tts = self.session().service("ALTextToSpeech")
         self.aniTts = self.session().service("ALAnimatedSpeech")
 
-        self.fileList = []
+        if imageTag in self.slideshow:
+            slides = self.slideshow[imageTag]
+            from time import sleep
+            # We create TabletService here in order to avoid
+            # problems with connections and disconnections of the tablet during the life of the application
+            tabletService = self._getTabletService()
+            if not tabletService:
+                self.logger.warning("No ALTabletService, cannot display images.")
+                self.onStopped()
 
-        self._getJsonDict(imageTag)
-        self.logger.debug("JSON: \n" + str(self.imageDict))
-        self.logger.debug("fileList: \n" + str(self.fileList))
-        self.i = 0
-        from time import sleep
-        self.running = True
-        # We create TabletService here in order to avoid
-        # problems with connections and disconnections of the tablet during the life of the application
-        tabletService = self._getTabletService()
-        if not tabletService:
-            self.logger.warning("No ALTabletService, cannot display images.")
-            self.onStopped()
-
-        while self.running == True :
-            preloadUrl = ''
-            self.logger.debug("Testing fileList length! " + str(self.fileList))
-            if len(self.fileList) > (self.i):
-                url = self.fileList[self.i]
-
-                try:
-                    preloadUrl = self.fileList[(1+self.i)]
-                except:     #will fail on last image.
-                    pass
-
-                fileName = url
-                self.i += 1
-            else:
-                self.running = False #stop loop
-                self.logger.info("Slideshow complete. Tag: " + imageTag)
-                break
-
-            if preloadUrl != '':
-                preloadUrl = self._getAbsoluteUrl(preloadUrl)
-                tabletService.preLoadImage(preloadUrl)
-
-            if url == '':
-                self.logger.error("URL of the image is empty")
-            if not url.startswith('http'):
-                url = self._getAbsoluteUrl(url)
-            tabletService.showImage(url)
-
-            #read metadata if any exists
-            if fileName in self.imageDict:
-                sleep(1) #wait before talking. Lets human study the image.
-                try:
-                    self.aniTts.say(self.imageDict[fileName][0])
-                except:
-                    self.logger.warning("animated-say encountered a problem. Dict.: " + str(self.imageDict[fileName]))
-                    self.tts.say(self.imageDict[fileName][0])
-                else:
-                    #execute if try/except succeded
+            # Preload all images
+            for slide in slides:
+                if 'image' in slide:
                     try:
-                        self.memory.raiseMicroEvent("memPostureStand",1)
+                        url = self._getAbsoluteUrl(slide['image'])
+                        self.logger.debug('Preloading: ' + url)
+                        tabletService.preLoadImage(url)
                     except:
-                        self.logger.info("Slideshow box failed to raiseMicroEvent('memPostureStand',1)")
-                sleep(1) #sec. sleep before loading next image
+                        pass
 
-            else:
-                sleep(5) #duration of shown image w/o metadata
+            for slide in slides:
+                self.logger.debug('Slide ' + str(slide));
+                if 'image' in slide:
+                    try:
+                        url = self._getAbsoluteUrl(slide['image'])
+                        tabletService.showImage(url)
+                    except:
+                        pass
 
+                sleep(slide['wait_before'] if 'wait_before' in slide else 1) #wait before talking. Lets human study the image.
+                if 'text' in slide:
+                    try:
+                        self.aniTts.say(slide['text'])
+                    except:
+                        self.logger.warning("animated-say encountered a problem. Dict.: " + str(slide))
+                    else:
+                        #execute if try/except succeded
+                        try:
+                            self.memory.raiseMicroEvent("memPostureStand",1)
+                        except:
+                            self.logger.info("Slideshow box failed to raiseMicroEvent('memPostureStand',1)")
+                    sleep(slide['wait_after'] if 'wait_after' in slide else 1) #wait before talking. Lets human study the image.
+                else:
+                    sleep(slide['wait_after'] if 'wait_after' in slide else 5) #duration of image without speak
 
+            self.logger.info("Slideshow complete. Tag: " + imageTag)
 
         self.onInput_onStop()
 
@@ -194,7 +152,6 @@
 
 
     def onInput_onStop(self):
-        self.running = False
         self.onInput_onHideImage()
         self.onUnload()
         self.onStopped()
