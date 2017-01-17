@@ -9,7 +9,7 @@ concept:(leave) ^rand["Have a nice day!" "See you around" "Come back soon" "Don'
 
 
 # Catching inputs and triggering outputs
-u:(e:onStart) \rspd=90\ ~hello \pau=600\ my name is Norma. I am from [Denmark "Aarhus in Denmark"]. ^goto(branch1)
+u:(e:onStart) \rspd=90\ ~hello \pau=600\ my name is Norma. I am from ^rand[Denmark "Aarhus in Denmark"]. ^goto(branch1)
 
 proposal: %branch1
     $memRandDecimal=0.5 \pau=100\ #50% to be true
