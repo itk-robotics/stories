@@ -63,7 +63,6 @@
         <File name="slideshow" src="slideshow.json" />
         <File name="slideshow" src="slideshow.yaml" />
         <File name="vi2017" src="vi2017.yaml" />
-        <File name="hmm" src="html/hmm.sh" />
         <File name="three_musketeers" src="html/three_musketeers.png" />
         <File name="01_ITK_skoleboern" src="html/01_ITK_skoleboern.jpg" />
         <File name="01_face-closeup" src="html/01_face-closeup.jpg" />
