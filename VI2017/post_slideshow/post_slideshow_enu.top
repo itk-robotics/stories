@@ -13,11 +13,11 @@ u:(e:onStart) \rspd=90\ Would you like to know more?
 
 proposal: %nothanks
     \rspd=90\
-    ^mode(disabled) $memPavilionAnimation=1 Ok. You can always visit us inside the pavillion. \pau=3000\
+    ^mode(disabled) $memPavilionAnimation=1 Ok. Please stay and discuss the dilemmas with us. \pau=3000\
     ^mode(contextual) Thank you for listening. \rspd=100\
     $memPostureStand=1 $onStopped=1
 
 proposal: %final
     \rspd=90\
-    Our focus is on showing what is possible now, and also investigate the solutions that are yet needed. \pau=300\ Please enter the pavilion and see the many exciting projects for the present and future smart city. Thank you for listening. \rspd=100\
+    Our focus is on showing what is possible now, and also investigate the solutions that are yet needed. \pau=300\ Please stay and discuss the dilemmas with us. \rspd=100\
     $memPostureStand=1 $onStopped=1

@@ -15,29 +15,6 @@
     <Resources>
         <File name="icon" src="icon.png" />
         <File name="images" src="images.json" />
-        <File name="01_Pavillon" src="html/01_Pavillon.jpg" />
-        <File name="03_intelligent-street-lights_02" src="html/03_intelligent-street-lights_02.jpg" />
-        <File name="partnerslide_E" src="html/partnerslide_E.jpg" />
-        <File name="partnerslide_P" src="html/partnerslide_P.jpg" />
-        <File name="partnerslide_S" src="html/partnerslide_S.jpg" />
-        <File name="01_smart_city_tech" src="html/01_smart_city_tech.jpg" />
-        <File name="01_sustainability" src="html/01_sustainability.jpg" />
-        <File name="02_climate-adaptation" src="html/02_climate-adaptation.jpg" />
-        <File name="02_smart_city_tech" src="html/02_smart_city_tech.jpg" />
-        <File name="02_sustainability" src="html/02_sustainability.jpg" />
-        <File name="03_smart_city_tech" src="html/03_smart_city_tech.jpg" />
-        <File name="03_sustainability" src="html/03_sustainability.jpg" />
-        <File name="04_pavilion" src="html/04_pavilion.jpg" />
-        <File name="04_smart_city_tech" src="html/04_smart_city_tech.jpg" />
-        <File name="04_sustainability" src="html/04_sustainability.jpg" />
-        <File name="05_CPH_solutionslab" src="html/05_CPH_solutionslab.jpg" />
-        <File name="05_smart_city_tech" src="html/05_smart_city_tech.jpg" />
-        <File name="05_sustainability" src="html/05_sustainability.jpg" />
-        <File name="06_sustainable-transportation" src="html/06_sustainable-transportation.jpg" />
-        <File name="06_hitachi_CPH" src="html/06_hitachi_CPH.jpg" />
-        <File name="07_Alexandra_pixl_park_kimwendt" src="html/07_Alexandra_pixl_park_kimwendt.jpg" />
-        <File name="07_smart_city_tech" src="html/07_smart_city_tech.jpg" />
-        <File name="08_leap_craft" src="html/08_leap_craft.jpg" />
         <File name="README" src="README.md" />
         <File name="CHANGES" src="lib/PyYAML-3.12/CHANGES" />
         <File name="LICENSE" src="lib/PyYAML-3.12/LICENSE" />
@@ -85,7 +62,9 @@
         <File name="setup" src="lib/PyYAML-3.12/setup.py" />
         <File name="slideshow" src="slideshow.json" />
         <File name="slideshow" src="slideshow.yaml" />
-        <File name="vi2017" src="vi2017.yml" />
+        <File name="vi2017" src="vi2017.yaml" />
+        <File name="hmm" src="html/hmm.sh" />
+        <File name="three_musketeers" src="html/three_musketeers.png" />
     </Resources>
     <Topics>
         <Topic name="attention_dialog_enu" src="attention_dialog/attention_dialog_enu.top" topicName="attention_dialog" language="en_US" />

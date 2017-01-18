@@ -7,9 +7,8 @@ concept:(hello) ^rand[hello hi hey greetings]
 concept:(welcome) ^rand["nice to meet you" "thanks for coming by" "good you are here"]
 concept:(leave) ^rand["Have a nice day!" "See you around" "Come back soon" "Don't be a stranger"]
 
-
 # Catching inputs and triggering outputs
-u:(e:onStart) \rspd=90\ ~hello \pau=600\ my name is Norma. I am from ^rand[Denmark "Aarhus in Denmark"]. $memSlideshowTag=subject $onStopped=1
+u:(e:onStart) \rspd=90\ ~hello \pau=600\ my name is Norma. \pau=600\ I am a humanoid robot. \pau=300\ I work for the City of Aarhus in Denmark [$memSlideshowTag=work_areas $memSlideshowTag=features] $onStopped=1
 
 proposal: %branch1
     $memRandDecimal=0.5 \pau=100\ #50% to be true

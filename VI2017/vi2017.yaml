@@ -1,0 +1,41 @@
+# Norma Pepper slideshow
+#
+#
+
+work_areas:
+  -
+    image: 01_ITK_skoleboern.jpg
+    text: \rspd=90\ I work at Culture and Citizens services with my colleagues at ITK Lab and Center for Innovation in Aarhus.
+
+  -
+    image: 02_Stadsarkivet.jpg
+    text: \rspd=90\ It is my hope that my job will be helpful not only to the citizens of Aarhus, but also that it can relieve my colleagues in some of the tasks they find demanding. \pau=300\ It is our mutual goal to save money and time, we can find better use for elsewhere.
+
+  -
+    image: 03_Borgerservice.jpg
+    text: \rspd=90\ I could help out in the City Archives showing historic photos on my tablet, and they could teach me some new anecdotes.
+
+  -
+    image: 04_Dokk1.jpg
+    text: \rspd=90\ Just like I give you information here, I could provide information at the Citizens Service counter in Aarhus.
+
+  -
+    image: three_musketeers.png
+    text: \rspd=90\ I already know a story about The Three Musketeers, and I'm reading a beautiful story at the moment. I am practicing to become a reading-buddy for the libraries.
+
+features:
+  -
+    image: 04_Navitas.jpg
+    text: \rspd=90\ I am designed to focus on emotions and to interact with human beings as naturally as possible.
+
+  -
+    image: 03_Nytaarskur_expo.jpg
+    text: \rspd=90\ I can perceive and analyse human emotions and learn to recognise you.
+
+  -
+    image: 02_Morgenmad_med_Mening.jpg
+    text: \rspd=90\ I am able to learn to adapt my attitude to suit your own. This is the result of what is known as my emotion engine.
+
+  -
+    image: 01_face-closeup.jpg
+    text: \rspd=90\ I am hoping to receive a language update soon, so I can speak to you in Danish next time we meet.
