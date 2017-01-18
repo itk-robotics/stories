@@ -65,6 +65,14 @@
         <File name="vi2017" src="vi2017.yaml" />
         <File name="hmm" src="html/hmm.sh" />
         <File name="three_musketeers" src="html/three_musketeers.png" />
+        <File name="01_ITK_skoleboern" src="html/01_ITK_skoleboern.jpg" />
+        <File name="01_face-closeup" src="html/01_face-closeup.jpg" />
+        <File name="02_Morgenmad_med_Mening" src="html/02_Morgenmad_med_Mening.jpg" />
+        <File name="02_Stadsarkivet" src="html/02_Stadsarkivet.jpg" />
+        <File name="03_Borgerservice" src="html/03_Borgerservice.jpg" />
+        <File name="03_Nytaarskur_expo" src="html/03_Nytaarskur_expo.jpg" />
+        <File name="04_Dokk1" src="html/04_Dokk1.jpg" />
+        <File name="04_Navitas" src="html/04_Navitas.jpg" />
     </Resources>
     <Topics>
         <Topic name="attention_dialog_enu" src="attention_dialog/attention_dialog_enu.top" topicName="attention_dialog" language="en_US" />

@@ -21,7 +21,8 @@ work_areas:
 
   -
     image: three_musketeers.png
-    text: \rspd=90\ I already know a story about The Three Musketeers, and I'm reading a beautiful story at the moment. I am practicing to become a reading-buddy for the libraries.
+    # We use a full stop after "The Three Musketeers" to make Norma pronounce the title (more) correctly.
+    text: \rspd=90\ I already know a story about The Three Musketeers. And I'm reading a beautiful story at the moment. I am practicing to become a reading buddy for the libraries.
 
 features:
   -
