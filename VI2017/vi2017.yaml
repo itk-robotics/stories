@@ -4,39 +4,51 @@
 
 work_areas:
   -
-    image: 01_ITK_skoleboern.jpg
+    image: 03_Close-up.JPG
     text: \rspd=90\ I work at Culture and Citizens services with my colleagues at ITK Lab and Center for Innovation in Aarhus.
 
   -
-    image: 02_Stadsarkivet.jpg
+    image: 04_Navitas_greeter.jpg
     text: \rspd=90\ It is my hope that my job will be helpful not only to the citizens of Aarhus, but also that it can relieve my colleagues in some of the tasks they find demanding. \pau=300\ It is our mutual goal to save money and time, we can find better use for elsewhere.
 
   -
-    image: 03_Borgerservice.jpg
+    image: 02_stadsarkivet.jpg
     text: \rspd=90\ I could help out in the City Archives showing historic photos on my tablet, and they could teach me some new anecdotes.
 
   -
-    image: 04_Dokk1.jpg
+    image: 03_borgerservice.jpg
     text: \rspd=90\ Just like I give you information here, I could provide information at the Citizens Service counter in Aarhus.
 
   -
-    image: three_musketeers.png
+    image: 01_library.JPG
     # We use a full stop after "The Three Musketeers" to make Norma pronounce the title (more) correctly.
     text: \rspd=90\ I already know a story about The Three Musketeers. And I'm reading a beautiful story at the moment. I am practicing to become a reading buddy for the libraries.
 
 features:
   -
-    image: 04_Navitas.jpg
+    image: 01_expo.jpg
+    text: \rspd=90\ I am already a skilled greeter and hostess. I was at the Smart City Expo in Barcelona representing the Danish pavilion.
+
+  -
+    image: Briefing_Mayor_and_norma_01.jpg
+    text: \rspd=90\ I have recently helped the Mayor of Aarhus wish everyone a happy new year.
+
+  -
+    image: 01_Dokk1_greeter.JPG
+    text: On Wednesdays I talk to people at Dokk1.
+
+  -
+    # image: IMG_0001.JPG
     text: \rspd=90\ I am designed to focus on emotions and to interact with human beings as naturally as possible.
 
   -
-    image: 03_Nytaarskur_expo.jpg
+    image: 03_Close-up.JPG
     text: \rspd=90\ I can perceive and analyse human emotions and learn to recognise you.
 
   -
-    image: 02_Morgenmad_med_Mening.jpg
+    # image: 02_Morgenmad_med_Mening.jpg
     text: \rspd=90\ I am able to learn to adapt my attitude to suit your own. This is the result of what is known as my emotion engine.
 
   -
-    image: 01_face-closeup.jpg
+    # image: 01_face-closeup.jpg
     text: \rspd=90\ I am hoping to receive a language update soon, so I can speak to you in Danish next time we meet.
